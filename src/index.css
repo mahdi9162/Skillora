@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+
+
+@plugin 'daisyui/theme' {
+  name: 'skilloraTheme';
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  /* Brand Color */
+  --color-primary: #0ea5e9;
+  --color-secondary: #f97316;
+  --color-accent: #22c55e;
+
+  /* Background and Surface */
+  --color-base-100: #FFF7ED;  /* Body */
+  --color-base-200: #FFFFFF;  /* Card and Nav */
+
+  /* Text Color */
+  --color-base-content: #1F2937; /* Default Text Color */
+
+  /* The text on colorfull background */
+  --color-primary-content: #FFFFFF;
+  --color-secondary-content: #FFFFFF;
+}
+
