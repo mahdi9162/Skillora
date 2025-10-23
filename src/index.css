@@ -1,9 +1,10 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap');
+
 @import 'tailwindcss';
 @plugin "daisyui" {
   themes: light --default;
 }
-
-
 
 @plugin 'daisyui/theme' {
   name: 'skilloraTheme';
@@ -17,14 +18,35 @@
   --color-accent: #22c55e;
 
   /* Background and Surface */
-  --color-base-100: #FFF7ED;  /* Body */
-  --color-base-200: #FFFFFF;  /* Card and Nav */
+  --color-base-100: #fff7ed; /* Body */
+  --color-base-200: #FAFAFA; /* Card and Nav */
 
   /* Text Color */
-  --color-base-content: #1F2937; /* Default Text Color */
+  --color-base-content: #1f2937; /* Default Text Color */
 
   /* The text on colorfull background */
-  --color-primary-content: #FFFFFF;
-  --color-secondary-content: #FFFFFF;
+  --color-primary-content: #ffffff;
+  --color-secondary-content: #ffffff;
+}
+
+/* Universal */
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Navbar */
+.active-nav-link-style {
+  @apply font-bold text-2xl transition-all duration-500 scale-101 text-secondary
+}
+
+.inactive-nav-link-style {
+  @apply font-medium text-lg transition-all duration-500 scale-101
 }
 
