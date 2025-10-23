@@ -16,10 +16,11 @@
   --color-primary: #0ea5e9;
   --color-secondary: #f97316;
   --color-accent: #22c55e;
+  --color-neutral: #1f2937;
 
   /* Background and Surface */
   --color-base-100: #fff7ed; /* Body */
-  --color-base-200: #FAFAFA; /* Card and Nav */
+  --color-base-200: #fafafa; /* Card and Nav */
 
   /* Text Color */
   --color-base-content: #1f2937; /* Default Text Color */
@@ -43,10 +44,22 @@ h4 {
 
 /* Navbar */
 .active-nav-link-style {
-  @apply font-bold text-2xl transition-all duration-500 scale-101 text-secondary
+  @apply font-bold text-base md:text-xl lg:text-2xl transition-all duration-500 scale-101 text-secondary;
 }
 
 .inactive-nav-link-style {
-  @apply font-medium text-lg transition-all duration-500 scale-101
+  @apply font-medium text-sm md:text-base lg:text-lg transition-all duration-500 scale-101;
 }
 
+/* Footer */
+.footer-animation-speed {
+  animation-duration: 5s;
+}
+
+.footer-link-li-header {
+  @apply lg:text-lg text-secondary font-semibold mb-0.5;
+}
+
+.footer-link-list {
+  @apply text-xs lg:text-base;
+}

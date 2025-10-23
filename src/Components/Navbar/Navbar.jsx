@@ -36,13 +36,13 @@ const Navbar = () => {
                   {links}
                 </ul>
               </div>
-              <div className="flex items-center gap-3">
-                <figure>
-                  <img className="w-10" src={imgLogo} alt="Logo" />
+              <div className="flex items-center gap-2 md:gap-3">
+                <figure className="w-4 md:w-8 lg:w-10 ">
+                  <img src={imgLogo} alt="Logo" />
                 </figure>
                 <div>
-                  <h2 className="text-3xl font-bold text-primary">Skillora</h2>
-                  <p className="text-xs">Share what you know, Learn what you love.</p>
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">Skillora</h2>
+                  <p className="text-xs hidden md:inline ">Share what you know, Learn what you love.</p>
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@ const Navbar = () => {
               <ul className="flex items-center gap-5 menu-horizontal px-1">{links}</ul>
             </div>
             <div className="navbar-end">
-              <Link className="btn btn-primary px-10 ">Login</Link>
+              <Link className="btn btn-primary md:px-10 ">Login</Link>
             </div>
           </div>
         </Container>
