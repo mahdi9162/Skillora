@@ -7,7 +7,7 @@ import logoImg from '../../assets/logo.png';
 const Footer = () => {
   return (
     <>
-      <footer className=" bg-base-200 text-base-content p-10">
+      <footer className=" bg-base-200 text-base-content px-3 md:p-10 ">
         <Container>
           <div className="flex items-start flex-col md:flex-row gap-5 lg:gap-0 justify-between">
             <aside>
@@ -61,7 +61,7 @@ const Footer = () => {
         </Container>
       </footer>
 
-      <div className="bg-neutral py-3 text-center text-xs lg:text-base text-primary-content tracking-widest">
+      <div className="bg-neutral py-3 text-center text-xs lg:text-base text-primary-content tracking-widest mt-5">
         <Container>
           <p>© {new Date().getFullYear()} Skillora | All rights reserved.</p>
         </Container>

@@ -49,8 +49,9 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
               <ul className="flex items-center gap-5 menu-horizontal px-1">{links}</ul>
             </div>
-            <div className="navbar-end">
-              <Link className="btn btn-primary md:px-10 ">Login</Link>
+            <div className="navbar-end flex gap-2 md:gap-5">
+              <Link to='/login' className="btn btn-primary md:px-10 ">Login</Link>
+              <Link to='/signup' className="btn btn-primary md:px-10 ">Signup</Link>
             </div>
           </div>
         </Container>
