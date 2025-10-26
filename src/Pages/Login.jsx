@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { use } from 'react';
 import loginAnimation from '../assets/Welcome.json';
 import Lottie from 'lottie-react';
 import Container from '../Components/Container/Container';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
+  const { userLogin } = use(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    userLogin(email, password)
+      .then((result) => {
+        const userInfo = result.user;
+        form.reset();
+        navigate('/');
+        console.log(userInfo);
+      })
+      .catch((error) => {
+        console.log(error.code);
+      });
+  };
+
   return (
     <>
       <section className="my-10 md:my-20 px-3 lg:px-0">
@@ -13,7 +36,7 @@ const Login = () => {
             {/* Left Side Div */}
             <div className="flex-1  ">
               <Lottie className="w-72 md:w-96 lg:w-[600px] mx-auto" animationData={loginAnimation}></Lottie>
-              <div className='text-center  lg:text-left'>
+              <div className="text-center  lg:text-left">
                 <h1 className="font-bold text-lg md:text-3xl md:mt-4">Learn. Teach. Grow Together.</h1>
                 <p className="mt-1.5 text-xs md:text-base">
                   Discover skills around you and share what you love. <br />
@@ -26,16 +49,17 @@ const Login = () => {
             <div className="flex-1 md:px-20 md:py-10 box-shadow-signup">
               <div>
                 <div className="text-center">
-                  <h2 className="text-center md:text-left text-xl md:text-3xl font-bold text-slate-800 mb-1 ">Welcome back!</h2>
+                  <h2 className="text-center md:text-left text-xl md:text-3xl font-bold text-slate-800 mb-1 tracking-widest">Welcome back!</h2>
                   <p className="text-slate-600 text-sm mb-6 text-center md:text-left">Sign in to your account</p>
                 </div>
 
-                <form>
+                <form onSubmit={handleLogin}>
                   <fieldset className="fieldset">
                     {/* Email */}
                     <label className="label text-base-content">Email</label>
                     <input
                       type="email"
+                      name="email"
                       className="input w-full placeholder:opacity-50 placeholder:text-xs md:placeholder:text-base mb-2"
                       placeholder="Enter Your Email"
                     />
@@ -43,6 +67,7 @@ const Login = () => {
                     <label className="label text-base-content">Password</label>
                     <input
                       type="password"
+                      name="password"
                       className="input w-full placeholder:opacity-50 placeholder:text-xs md:placeholder:text-base mb-2"
                       placeholder="Enter Your Password"
                     />

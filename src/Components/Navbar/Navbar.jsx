@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import Container from '../Container/Container';
 import imgLogo from '../../assets/logo.png';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
   const links = (
@@ -18,6 +19,18 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  const { user, logout } = use(AuthContext);
+
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        alert('logout successfully');
+      })
+      .catch((error) => {
+        console.log(error.code);
+      });
+  };
 
   return (
     <>
@@ -50,8 +63,18 @@ const Navbar = () => {
               <ul className="flex items-center gap-5 menu-horizontal px-1">{links}</ul>
             </div>
             <div className="navbar-end flex gap-2 md:gap-5">
-              <Link to='/login' className="btn btn-primary md:px-10 ">Login</Link>
-              <Link to='/signup' className="btn btn-primary md:px-10 ">Signup</Link>
+              {user ? (
+                <Link onClick={handleLogout} to="/login" className="btn btn-primary md:px-10 ">
+                  Logout
+                </Link>
+              ) : (
+                <Link to="/login" className="btn btn-primary md:px-10 ">
+                  Login
+                </Link>
+              )}
+              <Link to="/signup" className={`${user ? 'hidden' : 'btn btn-primary md:px-10'}`}>
+                Signup
+              </Link>
             </div>
           </div>
         </Container>

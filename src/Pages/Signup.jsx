@@ -1,21 +1,59 @@
-
+import React, { use, useState } from 'react';
 import signupAnimation from '../assets/Learning community animation.json';
 import Lottie from 'lottie-react';
 import Container from '../Components/Container/Container';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Signup = () => {
+  const [passValid, setPassValid] = useState('');
 
+  const { createSignup, setUser } = use(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+
+    setPassValid('');
+    if (password.length < 6) {
+      setPassValid('At least 6 characters');
+      return;
+    }
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setPassValid('Must include at least one uppercase letter (A–Z)');
+      return;
+    }
+    if (!/(?=.*[a-z])/.test(password)) {
+      setPassValid('Must include at least one lowercase letter (a–z)');
+      return;
+    }
+
+    createSignup(email, password)
+      .then((result) => {
+        const userInfo = result.user;
+        setUser(userInfo);
+        form.reset();
+        navigate('/');
+        console.log(userInfo);
+      })
+      .catch((error) => {
+        console.log(error.code);
+      });
+  };
 
   return (
     <>
-      <section className="my-5 lg:my-20 px-3 md:px-0">
+      <section className="my-10 lg:my-20 px-3 md:px-0">
         <Container>
           <div className="lg:flex items-center lg:flex-row gap-x-10">
             {/* Left Side Div */}
             <div className="flex-1  ">
-              <Lottie className="lg:-ml-24 w-72 md:w-[600px] lg:w-[850px] mx-auto" animationData={signupAnimation}></Lottie>
+              <Lottie className="lg:-ml-24 w-80 md:w-[600px] lg:w-[850px] mx-auto" animationData={signupAnimation}></Lottie>
               <div className="text-center lg:text-left">
                 <h1 className="font-bold text-lg md:text-2xl lg:text-3xl md:mt-4">Learn. Teach. Grow Together.</h1>
                 <p className="mt-1.5 text-xs md:text-base">
@@ -30,9 +68,9 @@ const Signup = () => {
             <div className="flex-1 md:px-20 md:py-10 box-shadow-signup">
               <div>
                 <h1 className="mb-3 md:mb-6 text-center lg:text-left text-xl md:text-2xl lg:text-3xl font-semibold">
-                  Create Your <strong className="text-primary">Skillora</strong> Account
+                  Create Your <strong className="text-primary tracking-wider">Skillora</strong> Account
                 </h1>
-                <form >
+                <form onSubmit={handleSignup}>
                   <fieldset className="fieldset">
                     {/* Name */}
                     <label className="label text-base-content">Name</label>
@@ -42,6 +80,7 @@ const Signup = () => {
                       className="input w-full placeholder:opacity-50 placeholder:text-xs md:placeholder:text-base mb-2"
                       placeholder="Enter Your Name"
                     />
+
                     {/* Email */}
                     <label className="label text-base-content">Email</label>
                     <input
@@ -66,6 +105,7 @@ const Signup = () => {
                       className="input w-full placeholder:opacity-50 placeholder:text-xs md:placeholder:text-base mb-2"
                       placeholder="Enter Your Password"
                     />
+                    <p className="text-xs text-red-500 -mt-2">{passValid && passValid}</p>
                     <div>
                       <p className="text-xs md:text-sm">
                         Already have an account?{' '}
@@ -75,7 +115,7 @@ const Signup = () => {
                       </p>
                     </div>
                     <div className="mx-auto md:mx-0">
-                      <button className="btn btn-primary md:px-10 mt-2 md:mt-4">Signup</button>
+                      <button className='btn btn-primary md:px-10 mt-2 md:mt-4'>Signup</button>
                     </div>
                   </fieldset>
                 </form>
