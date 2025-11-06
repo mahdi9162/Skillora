@@ -4,6 +4,8 @@ import Container from '../Container/Container';
 import imgLogo from '../../assets/logo.png';
 import { AuthContext } from '../../Provider/AuthProvider';
 import avatarImg from '../../assets/avatar.png';
+import Loading from '../Loading/Loading';
+
 const Navbar = () => {
   const links = (
     <>
@@ -65,7 +67,7 @@ const Navbar = () => {
 
             <div className="navbar-end flex gap-2 md:gap-5">
               {loading ? (
-                <span className="loading loading-spinner"></span>
+                <Loading></Loading>
               ) : (
                 <div className="flex gap-2 md:gap-5">
                   {user ? (

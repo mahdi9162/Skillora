@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import loginAnimation from '../assets/Welcome.json';
 import Lottie from 'lottie-react';
 import Container from '../Components/Container/Container';
@@ -8,6 +8,7 @@ import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
   const { userLogin, GoogleLogin } = use(AuthContext);
+  const [passValid, setPassValid] = useState('');
   const navigate = useNavigate();
 
   // Handle Email With Pass Login
@@ -17,6 +18,21 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+
+    // Varify
+    setPassValid('');
+    if (password.length < 6) {
+      setPassValid('At least 6 characters');
+      return;
+    }
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setPassValid('Must include at least one uppercase letter (A–Z)');
+      return;
+    }
+    if (!/(?=.*[a-z])/.test(password)) {
+      setPassValid('Must include at least one lowercase letter (a–z)');
+      return;
+    }
 
     userLogin(email, password)
       .then((result) => {
@@ -88,6 +104,7 @@ const Login = () => {
                       className="input w-full placeholder:opacity-50 placeholder:text-xs md:placeholder:text-base mb-2"
                       placeholder="Enter Your Password"
                     />
+                    <p className="text-xs text-red-500 -mt-2">{passValid && passValid}</p>
                     <div>
                       <a className="link link-hover">Forgot password?</a>
                     </div>
