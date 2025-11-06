@@ -4,19 +4,22 @@ import Lottie from 'lottie-react';
 import Container from '../Components/Container/Container';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
+import { FcGoogle } from 'react-icons/fc';
+import { updateProfile } from 'firebase/auth';
 
 const Signup = () => {
   const [passValid, setPassValid] = useState('');
 
-  const { createSignup, setUser } = use(AuthContext);
+  const { createSignup, setUser, GoogleLogin } = use(AuthContext);
   const navigate = useNavigate();
 
+  // Handle Email With Pass Signup
   const handleSignup = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
+    const displayName = form.name.value;
     const email = form.email.value;
-    const photo = form.photo.value;
+    const photoURL = form.photo.value;
     const password = form.password.value;
 
     setPassValid('');
@@ -36,8 +39,32 @@ const Signup = () => {
     createSignup(email, password)
       .then((result) => {
         const userInfo = result.user;
+        updateProfile(userInfo, {
+          displayName,
+          photoURL,
+        })
+          .then(() => {
+            alert('Successfully Signup');
+            setUser(userInfo);
+            form.reset();
+            navigate('/');
+            console.log(userInfo);
+          })
+          .catch((e) => {
+            alert('an error accuard', e.code);
+          });
+      })
+      .catch((error) => {
+        console.log(error.code);
+      });
+  };
+
+  // Handle Google Login
+  const handleGoogleLogin = () => {
+    GoogleLogin()
+      .then((result) => {
+        const userInfo = result.user;
         setUser(userInfo);
-        form.reset();
         navigate('/');
         console.log(userInfo);
       })
@@ -115,10 +142,18 @@ const Signup = () => {
                       </p>
                     </div>
                     <div className="mx-auto md:mx-0">
-                      <button className='btn btn-primary md:px-10 mt-2 md:mt-4'>Signup</button>
+                      <button className="btn btn-primary w-full font-bold mt-2 md:mt-4 box-shadow-signup-btn">Create Account</button>
+                      <p className="text-lg text-center my-3 font-bold">or</p>
                     </div>
                   </fieldset>
                 </form>
+                {/* Google */}
+                <button onClick={handleGoogleLogin} className="btn btn-secondary w-full  font-bold  box-shadow-signup-btn">
+                  <span className="bg-base-200 rounded-full">
+                    <FcGoogle size={16} />
+                  </span>{' '}
+                  Continue with Google
+                </button>
               </div>
             </div>
           </div>

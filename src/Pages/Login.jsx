@@ -4,11 +4,13 @@ import Lottie from 'lottie-react';
 import Container from '../Components/Container/Container';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
-  const { userLogin } = use(AuthContext);
+  const { userLogin, GoogleLogin } = use(AuthContext);
   const navigate = useNavigate();
 
+  // Handle Email With Pass Login
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -28,9 +30,22 @@ const Login = () => {
       });
   };
 
+  // Handle Google Login
+  const handleGoogleLogin = () => {
+    GoogleLogin()
+      .then((result) => {
+        const userInfo = result.user;
+        navigate('/');
+        console.log(userInfo);
+      })
+      .catch((error) => {
+        console.log(error.code);
+      });
+  };
+
   return (
     <>
-      <section className="my-10 md:my-20 px-3 lg:px-0">
+      <section className="my-10 md:my-30 px-3 lg:px-0">
         <Container>
           <div className="lg:flex items-center lg:flex-row gap-x-30">
             {/* Left Side Div */}
@@ -49,7 +64,9 @@ const Login = () => {
             <div className="flex-1 md:px-20 md:py-10 box-shadow-signup">
               <div>
                 <div className="text-center">
-                  <h2 className="text-center md:text-left text-xl md:text-3xl font-bold text-slate-800 mb-1 tracking-widest">Welcome back!</h2>
+                  <h2 className="text-center md:text-left text-xl md:text-3xl font-bold text-slate-800 mb-1 tracking-widest">
+                    Welcome back!
+                  </h2>
                   <p className="text-slate-600 text-sm mb-6 text-center md:text-left">Sign in to your account</p>
                 </div>
 
@@ -83,10 +100,18 @@ const Login = () => {
                       </p>
                     </div>
                     <div className="mx-auto lg:mx-0">
-                      <button className="btn btn-primary md:px-10 mt-4">Login</button>
+                      <button className="btn btn-primary md:w-full md:text-lg font-bold mt-4">Login</button>
+                      <p className="text-lg text-center my-3 font-bold">or</p>
                     </div>
                   </fieldset>
                 </form>
+                {/* Google */}
+                <button onClick={handleGoogleLogin} className="btn btn-secondary w-full  font-bold  box-shadow-signup-btn">
+                  <span className="bg-base-200 rounded-full">
+                    <FcGoogle size={16} />
+                  </span>{' '}
+                  Continue with Google
+                </button>
               </div>
             </div>
           </div>

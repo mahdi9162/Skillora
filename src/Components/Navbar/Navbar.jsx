@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router';
 import Container from '../Container/Container';
 import imgLogo from '../../assets/logo.png';
 import { AuthContext } from '../../Provider/AuthProvider';
-
+import avatarImg from '../../assets/avatar.png';
 const Navbar = () => {
   const links = (
     <>
@@ -20,7 +20,7 @@ const Navbar = () => {
     </>
   );
 
-  const { user, logout } = use(AuthContext);
+  const { user, logout, loading } = use(AuthContext);
 
   const handleLogout = () => {
     logout()
@@ -62,18 +62,34 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
               <ul className="flex items-center gap-5 menu-horizontal px-1">{links}</ul>
             </div>
+
             <div className="navbar-end flex gap-2 md:gap-5">
-              {user ? (
-                <Link onClick={handleLogout} to="/login" className="btn btn-primary md:px-10 ">
-                  Logout
-                </Link>
+              {loading ? (
+                <span className="loading loading-spinner"></span>
               ) : (
-                <Link to="/login" className="btn btn-primary md:px-10 ">
-                  Login
-                </Link>
+                <div className="flex gap-2 md:gap-5">
+                  {user ? (
+                    <Link onClick={handleLogout} to="/login" className="btn btn-primary md:px-10 ">
+                      Logout
+                    </Link>
+                  ) : (
+                    <Link to="/login" className="btn btn-primary md:px-10 ">
+                      Login
+                    </Link>
+                  )}
+                  <Link to="/signup" className={`${user ? 'hidden' : 'btn btn-primary md:px-10'}`}>
+                    Signup
+                  </Link>
+                </div>
               )}
-              <Link to="/signup" className={`${user ? 'hidden' : 'btn btn-primary md:px-10'}`}>
-                Signup
+              <Link to="/my-profile">
+                <div className={`${user ? 'inline' : 'hidden'} cursor-pointer tooltip`} data-tip={user?.displayName || 'Name is Null'}>
+                  <div className="avatar avatar-online">
+                    <div className="w-12 rounded-full">
+                      <img src={user?.photoURL ? user?.photoURL : avatarImg} referrerPolicy="no-referrer" />
+                    </div>
+                  </div>
+                </div>
               </Link>
             </div>
           </div>
