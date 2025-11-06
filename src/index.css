@@ -15,7 +15,7 @@
   /* Brand Color */
   --color-primary: #0ea5e9;
   --color-secondary: #f97316;
-  --color-accent: #22c55e;
+  --color-accent: #666;
   --color-neutral: #1f2937;
 
   /* Background and Surface */
@@ -48,7 +48,7 @@ h4 {
 }
 
 .inactive-nav-link-style {
-  @apply font-medium text-sm md:text-base lg:text-lg transition-all duration-500 scale-101;
+  @apply font-medium text-sm md:text-base lg:text-lg transition-all text-accent duration-500 scale-101;
 }
 
 /* Footer */

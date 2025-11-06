@@ -36,10 +36,10 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-base-200 shadow-sm">
+      <nav className="bg-[#ffffffcc] backdrop-blur-sm shadow-md border-b border-[#eaeaea]/60">
         <Container>
           <div className="navbar py-4">
-            <div className="navbar-start">
+            <div className="navbar-start ">
               <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,7 +57,7 @@ const Navbar = () => {
                 </figure>
                 <div>
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">Skillora</h2>
-                  <p className="text-xs hidden md:inline ">Share what you know, Learn what you love.</p>
+                  <p className="text-xs hidden md:inline text-accent">Share what you know, Learn what you love.</p>
                 </div>
               </div>
             </div>
@@ -86,8 +86,8 @@ const Navbar = () => {
               )}
               <Link to="/my-profile">
                 <div className={`${user ? 'inline' : 'hidden'} cursor-pointer tooltip`} data-tip={user?.displayName || 'Name is Null'}>
-                  <div className="avatar avatar-online">
-                    <div className="w-12 rounded-full">
+                  <div className="avatar avatar-online hidden md:inline">
+                    <div className="w-8 md:w-12 rounded-full">
                       <img src={user?.photoURL ? user?.photoURL : avatarImg} referrerPolicy="no-referrer" />
                     </div>
                   </div>
