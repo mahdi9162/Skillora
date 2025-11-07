@@ -1,38 +1,20 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Loading from '../Loading/Loading';
 import Container from '../Container/Container';
 import PopulerSkillsCard from './PopulerSkillsCard';
+import { SkillContext } from '../../Provider/SkillProvider';
+import { use } from 'react';
 
 const PopulerSkills = () => {
-  const [skills, setSkills] = useState([]);
-  const [isLoading, setLoading] = useState(true);
-  console.log(skills);
-
-  useEffect(() => {
-    const loadSkills = async () => {
-      try {
-        const res = await axios.get('/skills.json');
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        setSkills(res.data);
-      } catch (error) {
-        console.error('Error Loading Skills Data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    loadSkills();
-  }, []);
+  const { skills, isLoading } = use(SkillContext);
 
   if (isLoading) {
     return (
-      <div className="my-92">
+      <div className="my-90">
         <Loading></Loading>
       </div>
     );
   }
-
   return (
     <>
       <section className=" relative my-5 md:my-10 lg:my-20 bg-linear-to-b from-white to-[#F6FAFB] overflow-hidden py-16 px-3 lg:px-0">

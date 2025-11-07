@@ -6,11 +6,14 @@ import Router from './Router/Router';
 import AuthProvider from './Provider/AuthProvider';
 /* Animate CSS */
 import 'animate.css';
+import SkillProvider from './Provider/SkillProvider';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-      <RouterProvider router={Router} />
+      <SkillProvider>
+        <RouterProvider router={Router} />
+      </SkillProvider>
     </AuthProvider>
   </StrictMode>
 );

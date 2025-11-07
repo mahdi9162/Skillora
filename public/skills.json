@@ -7,7 +7,9 @@
     "price": 20,
     "rating": 4.8,
     "slotsAvailable": 3,
-    "description": "Acoustic guitar classes for complete beginners. You’ll learn basic chords, strumming patterns, and how to play simple songs from day one.",
+    "tagline": "Strum your first songs with confidence.",
+    "description": "This beginner-friendly guitar course is designed for students who have never held a guitar before or only know a few random chords. We start with how to hold the instrument correctly, tune it by ear and with a tuner, and build finger strength using simple exercises.\n\nOnce you are comfortable, we move into must-know open chords, basic chord progressions, and popular strumming patterns that are used in hundreds of songs. You will also learn how to read chord charts, follow simple rhythm patterns, and switch between chords smoothly without feeling rushed.\n\nBy the end of the sessions, you will be able to play complete songs from start to finish, understand how to practice effectively, and feel confident enough to continue learning on your own or join intermediate-level classes.",
+    "highlights": ["Step-by-step chord and strumming practice", "Song-based learning with easy pop & acoustic tracks"],
     "image": "https://i.ibb.co.com/TD5pqqGN/Guiter.jpg",
     "category": "Music"
   },
@@ -19,7 +21,9 @@
     "price": 10,
     "rating": 4.6,
     "slotsAvailable": 5,
-    "description": "Conversational English sessions for non-native speakers. Focus on fluency, pronunciation, and real-life speaking scenarios.",
+    "tagline": "Speak English naturally, not like a textbook.",
+    "description": "This comprehensive spoken English course focuses on real-life communication rather than boring grammar drills. Each session is built around everyday situations such as introductions, meetings, phone calls, and casual conversations so that you can start using English confidently from day one.\n\nYou will practice speaking through role-plays, guided dialogues, and group discussions where you receive gentle corrections on pronunciation, sentence structure, and vocabulary choice. Short listening activities and mini-presentations help you understand different accents and express your ideas clearly.\n\nWhether you are preparing for interviews, university life, or international work, this course gives you the confidence to speak without freezing, forget words less often, and sound more fluent and natural in your daily conversations.",
+    "highlights": ["Live conversation practice every session", "Pronunciation and confidence-building exercises"],
     "image": "https://i.ibb.co.com/QFk2dKQR/English.jpg",
     "category": "Language"
   },
@@ -31,7 +35,9 @@
     "price": 25,
     "rating": 4.9,
     "slotsAvailable": 4,
-    "description": "Learn HTML, CSS, and basic JavaScript by building simple landing pages and interactive components from scratch.",
+    "tagline": "Build your very first website from scratch.",
+    "description": "This hands-on frontend course is ideal for complete beginners who want to understand how modern websites are built. We start with the foundations of HTML to structure your content, then move into CSS to style layouts, colors, and typography so your pages actually look good.\n\nAfter you are comfortable with the basics, we introduce JavaScript to add interactivity such as button clicks, simple animations, and dynamic content updates. You will recreate small components like navbars, cards, and responsive sections that work on both mobile and desktop screens.\n\nThroughout the course, you will work on a mini portfolio project where you combine everything you learn into a clean single-page website. By the end, you will understand how HTML, CSS, and JavaScript fit together and feel confident enough to continue learning frameworks like React or Vue.",
+    "highlights": ["Covers HTML, CSS, and basic JavaScript", "Includes a real landing page project"],
     "image": "https://i.ibb.co.com/6cx3wY9H/Frontend.jpg",
     "category": "Programming"
   },
@@ -43,7 +49,9 @@
     "price": 15,
     "rating": 4.7,
     "slotsAvailable": 6,
-    "description": "One-on-one sessions to help you plan your day, set priorities, and build habits using simple tools like Notion and Google Calendar.",
+    "tagline": "Turn busy days into focused, calm progress.",
+    "description": "This 1-to-1 productivity coaching program is for students and professionals who feel busy all the time but still do not see solid progress. In our first session, we map out your typical week, identify time leaks, and clarify what actually matters for your goals.\n\nFrom there, we build a simple planning system using tools like Notion, Google Calendar, and to-do lists that match your personality and schedule. You will learn how to break big goals into small daily actions, prioritize tasks without feeling overwhelmed, and create focus blocks for deep work.\n\nEach follow-up session includes reviewing your previous week, adjusting your routines, and overcoming problems like procrastination, distractions, and burnout. By the end, you will have a practical, personalized system that keeps you organized and motivated without being overcomplicated.",
+    "highlights": ["Custom weekly plan built around your real life", "Tool setup in Notion or Google Calendar"],
     "image": "https://i.ibb.co.com/nqsvLRS2/Productivity-Coaching.jpg",
     "category": "Self Development"
   },
@@ -55,7 +63,9 @@
     "price": 12,
     "rating": 4.5,
     "slotsAvailable": 8,
-    "description": "Learn how to set up a complete Shopify store from scratch. We’ll cover choosing a theme, adding products, setting up payments and shipping, and configuring essential apps. By the end, you’ll have a fully functional basic online store ready to share with customers.",
+    "tagline": "Launch your first online store the right way.",
+    "description": "This beginner Shopify course is built for creators, small business owners, and students who want to start selling online without becoming tech experts. We begin with the basics: setting up your Shopify account, choosing a clean theme, and configuring essential settings like currency, taxes, and shipping.\n\nNext, we move into the practical parts of running a store. You will learn how to add products with variations, write conversion-friendly descriptions, organize collections, and create a homepage that actually guides visitors toward buying. We also cover setting up payment gateways, basic discount codes, and essential apps for reviews, email capture, and analytics.\n\nBy the end of the sessions, you will have a fully functional, live Shopify store ready to share with customers. You will also walk away with a simple checklist for maintaining your store, tracking orders, and making future updates confidently on your own.",
+    "highlights": ["Complete store setup from zero to launch", "Covers products, payments, shipping, and apps"],
     "image": "https://i.ibb.co.com/QFq9K41S/Shopify.jpg",
     "category": "E-commerce"
   },
@@ -67,7 +77,9 @@
     "price": 8,
     "rating": 4.4,
     "slotsAvailable": 10,
-    "description": "Quick and easy recipes for students and beginners: one-pot meals, simple curries, and budget-friendly lunch ideas.",
+    "tagline": "Cook simple, tasty meals without burning the kitchen.",
+    "description": "This cooking class is designed for students and beginners who want to eat better without spending too much time or money. We start with absolute basics like how to safely use knives, store ingredients, and set up a small but efficient kitchen even in a hostel or shared apartment.\n\nYou will learn quick recipes such as one-pot pasta, stir-fried vegetables, simple curries, fried rice, and budget-friendly breakfast and lunch options. Each recipe focuses on easily available ingredients, minimal utensils, and techniques that are easy to repeat on busy days.\n\nAlong the way, we discuss how to plan weekly meals, reuse leftovers creatively, and balance taste with nutrition. By the end, you will feel more confident in the kitchen and less dependent on instant noodles and random takeout.",
+    "highlights": ["Beginner-friendly, no prior cooking skills needed", "Uses common ingredients and minimal utensils"],
     "image": "https://i.ibb.co.com/JjmTFfPH/Cooking.jpg",
     "category": "Cooking"
   },
@@ -79,7 +91,9 @@
     "price": 30,
     "rating": 4.9,
     "slotsAvailable": 3,
-    "description": "Understand user-centered design, wireframing, and basic prototyping using Figma. Perfect for beginners entering UI/UX.",
+    "tagline": "Design clean, user-friendly interfaces that feel modern.",
+    "description": "This course introduces you to the core ideas behind good UI and UX design so you do not just make screens that look pretty, but ones that are actually easy to use. We start with understanding user needs, defining problems, and translating them into clear user flows and wireframes.\n\nYou will then learn visual design basics such as layout, spacing, typography, color, and hierarchy, and how to apply them consistently across a product. Using Figma, we will create low-fidelity wireframes and gradually turn them into polished mockups with buttons, cards, and navigation components.\n\nBy the end of the course, you will complete a mini portfolio project such as a mobile app or simple web dashboard and understand how to present your design decisions. This gives you a strong foundation to move toward more advanced UX research or a career in product design.",
+    "highlights": ["Hands-on Figma practice from wireframes to UI", "Finish with a mini portfolio project to showcase"],
     "image": "https://i.ibb.co.com/jPc3W00H/UIUX.jpg",
     "category": "Design"
   },
@@ -91,7 +105,9 @@
     "price": 18,
     "rating": 4.7,
     "slotsAvailable": 5,
-    "description": "Hands-on Python basics: variables, loops, functions, and small practice problems to build a strong foundation.",
+    "tagline": "Start coding with one of the most beginner-friendly languages.",
+    "description": "This introductory Python course is perfect for learners who have never written a line of code but want to understand how programming actually works. We begin with installing Python, writing your first simple scripts, and understanding concepts like variables, data types, and input/output.\n\nAfter that, we dive into core building blocks such as conditions, loops, and functions, using plenty of small examples and practice problems. You will write mini programs like calculators, text-based games, and basic data processors that show how Python can automate everyday tasks.\n\nToward the end, you will get a gentle introduction to working with lists, dictionaries, and basic file handling, plus a quick look at where Python can take you next, from web development to data science. The goal is for you to finish the course feeling confident that coding is not scary and that you really can build things with it.",
+    "highlights": ["No prior coding experience required", "Solid foundation for data science or web development"],
     "image": "https://i.ibb.co.com/FL5w4Kbr/python.png",
     "category": "Programming"
   }

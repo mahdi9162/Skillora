@@ -77,3 +77,8 @@ h4 {
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
   }
 }
+
+/* Skill Details Style */
+.instructor-box {
+  @apply p-8 mt-5 lg:mt-0 lg:w-[30%] bg-white/70 backdrop-blur-md rounded-3xl border border-white/30 space-y-3 transition-all duration-400 hover:shadow-[0_10px_40px_rgba(0,0,0,0.15)] hover:-translate-y-1 hover:scale-[1.02] bg-linear-to-b from-[#0ea5e9]/15 to-[#fafafa00] shadow-xl 
+}
