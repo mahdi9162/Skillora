@@ -1,7 +1,7 @@
 import React, { use, useEffect, useRef } from 'react';
 import Container from '../Components/Container/Container';
 import { SkillContext } from '../Provider/SkillProvider';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import Loading from '../Components/Loading/Loading';
 import { FaStar } from 'react-icons/fa';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
@@ -184,6 +184,15 @@ const SkillDetails = () => {
             </button>
           </form>
         </section>
+        <div className="flex justify-center my-10">
+          <Link
+            to="/"
+            type="button"
+            className="mt-4 bg-primary hover:bg-blue-500 text-white font-semibold py-3 px-10 rounded-xl transition-all duration-500 shadow-md hover:shadow-lg cursor-pointer"
+          >
+            Back To Home
+          </Link>
+        </div>
       </Container>
     </>
   );
