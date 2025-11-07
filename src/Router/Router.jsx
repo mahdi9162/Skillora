@@ -6,6 +6,7 @@ import MyProfile from '../Pages/MyProfile';
 import Home from '../Pages/Home';
 import SkillDetails from '../Pages/SkillDetails';
 import PrivateRoute from '../Provider/PrivateRoute';
+import ForgotPassword from '../Pages/ForgotPassword';
 
 const Router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const Router = createBrowserRouter([
             <SkillDetails></SkillDetails>
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/forgot-password',
+        Component: ForgotPassword,
       },
     ],
   },

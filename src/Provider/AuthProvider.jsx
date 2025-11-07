@@ -5,6 +5,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -21,20 +22,32 @@ const AuthProvider = ({ children }) => {
 
   //   Signup Functionality
   const createSignup = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   //   Login Functionality
   const userLogin = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // Google Login Functionality
   const GoogleLogin = () => {
-    setLoading(true)
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
+  };
+
+  // Reset Password
+  const resetPassword = (email) => {
+    setLoading(true);
+    return sendPasswordResetEmail(auth, email);
+  };
+
+  //   Logout
+  const logout = () => {
+    setLoading(true);
+    return signOut(auth);
   };
 
   //   Observer
@@ -48,11 +61,6 @@ const AuthProvider = ({ children }) => {
     };
   }, [auth]);
 
-  //   Logout
-  const logout = () => {
-    return signOut(auth);
-  };
-
   const authData = {
     user,
     setUser,
@@ -62,6 +70,7 @@ const AuthProvider = ({ children }) => {
     logout,
     loading,
     setLoading,
+    resetPassword,
   };
   return <AuthContext value={authData}>{children}</AuthContext>;
 };

@@ -8,9 +8,10 @@ import { format } from 'date-fns';
 import Loading from '../Components/Loading/Loading';
 import { updateProfile } from 'firebase/auth';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router';
 
 const MyProfile = () => {
-  const { user, setUser, loading } = use(AuthContext);
+  const { user, setUser, loading, logout } = use(AuthContext);
 
   const updateYourProfile = useRef(null);
 
@@ -69,6 +70,16 @@ const MyProfile = () => {
           className: 'bg-secendory text-white font-semibold rounded-xl shadow-lg',
         });
         form.reset();
+      })
+      .catch((error) => {
+        console.log(error.code);
+      });
+  };
+
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        alert('logout successfully');
       })
       .catch((error) => {
         console.log(error.code);
@@ -278,11 +289,14 @@ const MyProfile = () => {
 
           {/* Buttons */}
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-8 py-3 rounded-xl text-sm font-medium text-white bg-sky-500 hover:bg-sky-600 transition-all shadow-md hover:shadow-lg">
+            <Link className="px-8 py-3 rounded-xl text-sm font-medium text-white bg-sky-500 hover:bg-sky-600 transition-all shadow-md hover:shadow-lg">
               Change Password
-            </button>
+            </Link>
 
-            <button className="px-8 py-3 rounded-xl text-sm font-medium text-sky-600 bg-white border border-sky-200 hover:bg-sky-50 transition-all shadow-sm hover:shadow-md">
+            <button
+              onClick={handleLogout}
+              className="px-8 py-3 rounded-xl text-sm font-medium text-sky-600 bg-white border border-sky-200 hover:bg-sky-50 transition-all shadow-sm hover:shadow-md cursor-pointer"
+            >
               Logout
             </button>
           </div>

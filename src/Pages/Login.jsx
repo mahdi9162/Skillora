@@ -9,6 +9,7 @@ import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
   const { userLogin, GoogleLogin } = use(AuthContext);
   const [passValid, setPassValid] = useState('');
+  const [email, setEmail] = useState('');
   const navigate = useNavigate();
 
   // Handle Email With Pass Login
@@ -91,8 +92,10 @@ const Login = () => {
                     {/* Email */}
                     <label className="label text-base-content">Email</label>
                     <input
+                      onChange={(e) => setEmail(e.target.value)}
                       type="email"
                       name="email"
+                      value={email}
                       className="input w-full placeholder:opacity-50 placeholder:text-xs md:placeholder:text-base mb-2"
                       placeholder="Enter Your Email"
                     />
@@ -106,7 +109,9 @@ const Login = () => {
                     />
                     <p className="text-xs text-red-500 -mt-2">{passValid && passValid}</p>
                     <div>
-                      <a className="link link-hover">Forgot password?</a>
+                      <Link to="/forgot-password" state={{ email: email }} className="link link-hover">
+                        Forgot password?
+                      </Link>
                     </div>
                     <div>
                       <p className="text-sm text-slate-600 mt-3 text-center lg:text-left">
