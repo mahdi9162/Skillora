@@ -19,7 +19,7 @@
   --color-neutral: #1f2937;
 
   /* Background and Surface */
-  --color-base-100: #fff7ed; /* Body */
+  --color-base-100: #fff; /* Body */
   --color-base-200: #fafafa; /* Card and Nav */
 
   /* Text Color */
@@ -72,8 +72,8 @@ h4 {
   }
 }
 
-@media (min-width:1024px) {
+@media (min-width: 1024px) {
   .box-shadow-signup-btn {
-    box-shadow: 0 5px 30px rgba(0,0,0,.08);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
   }
 }

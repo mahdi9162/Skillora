@@ -3,7 +3,9 @@ import MainLayout from '../Layout/MainLayout';
 import Login from '../Pages/Login';
 import Signup from '../Pages/Signup';
 import MyProfile from '../Pages/MyProfile';
-import Home from '../Components/Home/Home';
+import Home from '../Pages/Home';
+import SkillDetails from '../Pages/SkillDetails';
+import PrivateRoute from '../Provider/PrivateRoute';
 
 const Router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const Router = createBrowserRouter([
       {
         path: '/my-profile',
         Component: MyProfile,
+      },
+      {
+        path: '/skill-details/:id',
+        element: (
+          <PrivateRoute>
+            <SkillDetails></SkillDetails>
+          </PrivateRoute>
+        ),
       },
     ],
   },

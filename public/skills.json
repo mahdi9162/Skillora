@@ -1,0 +1,98 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners. You’ll learn basic chords, strumming patterns, and how to play simple songs from day one.",
+    "image": "https://i.ibb.co.com/TD5pqqGN/Guiter.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers. Focus on fluency, pronunciation, and real-life speaking scenarios.",
+    "image": "https://i.ibb.co.com/QFk2dKQR/English.jpg",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Frontend Web Development Basics",
+    "providerName": "Nayeem Rahman",
+    "providerEmail": "nayeem@skillswap.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Learn HTML, CSS, and basic JavaScript by building simple landing pages and interactive components from scratch.",
+    "image": "https://i.ibb.co.com/6cx3wY9H/Frontend.jpg",
+    "category": "Programming"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Personal Productivity Coaching",
+    "providerName": "Maria Lopez",
+    "providerEmail": "maria@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "One-on-one sessions to help you plan your day, set priorities, and build habits using simple tools like Notion and Google Calendar.",
+    "image": "https://i.ibb.co.com/nqsvLRS2/Productivity-Coaching.jpg",
+    "category": "Self Development"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Shopify Store Setup for Beginners",
+    "providerName": "Riya Sharma",
+    "providerEmail": "riya@skillswap.com",
+    "price": 12,
+    "rating": 4.5,
+    "slotsAvailable": 8,
+    "description": "Learn how to set up a complete Shopify store from scratch. We’ll cover choosing a theme, adding products, setting up payments and shipping, and configuring essential apps. By the end, you’ll have a fully functional basic online store ready to share with customers.",
+    "image": "https://i.ibb.co.com/QFq9K41S/Shopify.jpg",
+    "category": "E-commerce"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Basic Cooking for Students",
+    "providerName": "Imran Ali",
+    "providerEmail": "imran@skillswap.com",
+    "price": 8,
+    "rating": 4.4,
+    "slotsAvailable": 10,
+    "description": "Quick and easy recipes for students and beginners: one-pot meals, simple curries, and budget-friendly lunch ideas.",
+    "image": "https://i.ibb.co.com/JjmTFfPH/Cooking.jpg",
+    "category": "Cooking"
+  },
+  {
+    "skillId": 7,
+    "skillName": "UI/UX Design Fundamentals",
+    "providerName": "Hannah Kim",
+    "providerEmail": "hannah@skillswap.com",
+    "price": 30,
+    "rating": 4.9,
+    "slotsAvailable": 3,
+    "description": "Understand user-centered design, wireframing, and basic prototyping using Figma. Perfect for beginners entering UI/UX.",
+    "image": "https://i.ibb.co.com/jPc3W00H/UIUX.jpg",
+    "category": "Design"
+  },
+  {
+    "skillId": 8,
+    "skillName": "Intro to Python Programming",
+    "providerName": "Rahul Desai",
+    "providerEmail": "rahul@skillswap.com",
+    "price": 18,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Hands-on Python basics: variables, loops, functions, and small practice problems to build a strong foundation.",
+    "image": "https://i.ibb.co.com/FL5w4Kbr/python.png",
+    "category": "Programming"
+  }
+]

@@ -52,7 +52,7 @@ const Navbar = () => {
                 </ul>
               </div>
               <div className="flex items-center gap-2 md:gap-3">
-                <figure className="w-4 md:w-8 lg:w-10 ">
+                <figure className="w-4 md:w-8 lg:w-10 hidden md:inline ">
                   <img src={imgLogo} alt="Logo" />
                 </figure>
                 <div>
