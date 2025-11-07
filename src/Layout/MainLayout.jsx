@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 
 const MainLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
       <ToastContainer />
       <Navbar></Navbar>
       <div className="flex-1">
