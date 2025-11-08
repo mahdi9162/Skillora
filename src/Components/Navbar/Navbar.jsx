@@ -56,7 +56,7 @@ const Navbar = () => {
                   <img src={imgLogo} alt="Logo" />
                 </figure>
                 <div>
-                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">Skillora</h2>
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold bg-linear-to-r from-[#7DD3FC] via-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent drop-shadow-sm">Skillora</h2>
                   <p className="text-xs hidden md:inline text-accent">Share what you know, Learn what you love.</p>
                 </div>
               </div>

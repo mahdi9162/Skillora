@@ -5,12 +5,12 @@ import { initializeApp } from 'firebase/app';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyCi3TeBS4mHDFqoptY4WSXIXuh43Tawky0',
-  authDomain: 'skillora-505c9.firebaseapp.com',
-  projectId: 'skillora-505c9',
-  storageBucket: 'skillora-505c9.firebasestorage.app',
-  messagingSenderId: '420640949941',
-  appId: '1:420640949941:web:d078f2c04894cdf6baa0fc',
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 // Initialize Firebase

@@ -5,9 +5,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import Container from '../Container/Container';
-import firstHeroImg from '../../assets/techAndDesign.jpg';
-import secondHeroImg from '../../assets/learnGuiter.jpg';
-import thirdHeroImg from '../../assets/productive.jpg';
+import firstHeroImg from '../../assets/techAndDesign.webp';
+import secondHeroImg from '../../assets/learnGuiter.webp';
+import thirdHeroImg from '../../assets/productive.webp';
 const HeroSec = () => {
   return (
     <>

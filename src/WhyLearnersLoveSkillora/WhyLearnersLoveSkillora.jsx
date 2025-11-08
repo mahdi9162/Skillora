@@ -33,9 +33,9 @@ const WhyLearnersLoveSkillora = () => {
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">
                 Why Learners Love{' '}
-                <span className="text-primary relative inline-block">
+                <span className="md:text-4xl bg-linear-to-r from-[#7DD3FC] via-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent drop-shadow-sm">
                   Skillora
-                  <span className="absolute left-0 -bottom-1 h-[3px] w-full bg-linear-to-r from-[#0ea5e9] to-[#38bdf8] rounded-full" />
+                  <span className="absolute -bottom-1 left-0 w-full h-1 rounded-full bg-linear-to-r from-sky-400/60 to-sky-600/60"></span>
                 </span>
               </h2>
               <p className="mt-3 text-sm md:text-base text-slate-500">Discover what makes learning with Skillora simple and effective.</p>

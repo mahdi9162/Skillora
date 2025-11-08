@@ -14,7 +14,9 @@ const Footer = () => {
               <figure className="w-8 lg:w-12 animate-spin footer-animation-speed">
                 <img src={logoImg} alt="Logo" />
               </figure>
-              <p className="mt-2 text-xl lg:text-2xl font-bold text-primary">Skillora</p>
+              <p className="my-2 text-xl lg:text-3xl font-bold bg-linear-to-r from-[#7DD3FC] via-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent drop-shadow-sm">
+                Skillora
+              </p>
               <p className="font-medium text-xs lg:text-sm">Learn. Teach. Grow together.</p>
             </aside>
 

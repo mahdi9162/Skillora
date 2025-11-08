@@ -30,7 +30,14 @@ const HowSkilloraWorks = () => {
         <Container>
           {/* Heading */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-sky-900">How Skillora Works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-sky-900">
+              How{' '}
+              <span className="md:text-4xl bg-linear-to-r from-[#7DD3FC] via-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent drop-shadow-sm">
+                Skillora
+                <span className="absolute -bottom-1 left-0 w-full h-1 rounded-full bg-linear-to-r from-sky-400/60 to-sky-600/60"></span>
+              </span>{' '}
+              Works
+            </h2>
             <p className="text-gray-500 mt-2">Start learning in three simple steps</p>
           </div>
 
