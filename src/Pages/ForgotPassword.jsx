@@ -17,8 +17,19 @@ const ForgotPassword = () => {
 
     resetPassword(email)
       .then(() => {
-        toast.success('Update done');
-        window.location.href = 'https://mail.google.com/mail/u/0/#inbox';
+        toast.success('Reset link sent to your email.', {
+          position: 'top-center',
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: 'colored',
+          className: 'bg-secendory text-white font-semibold rounded-xl shadow-lg',
+        });
+        setTimeout(() => {
+          window.location.href = 'https://mail.google.com/mail/u/0/#inbox';
+        }, 3000);
       })
       .catch((error) => {
         console.log(error);

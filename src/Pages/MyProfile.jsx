@@ -1,4 +1,4 @@
-import React, { use, useRef } from 'react';
+import React, { use, useRef, useState } from 'react';
 import Container from '../Components/Container/Container';
 import avatarImg from '../assets/avatar.png';
 import { AuthContext } from '../Provider/AuthProvider';
@@ -6,15 +6,17 @@ import { FaGoogle } from 'react-icons/fa';
 import { MdOutlineEmail } from 'react-icons/md';
 import { format } from 'date-fns';
 import Loading from '../Components/Loading/Loading';
-import { updateProfile } from 'firebase/auth';
+import { getAuth, updateProfile } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router';
+import { app } from '../Firebase/firebase.config';
 
 const MyProfile = () => {
   const { user, setUser, loading, logout } = use(AuthContext);
-
+  const [isUpdateing, setIsUpdating] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('Changes will update your Skillora profile info.');
   const updateYourProfile = useRef(null);
-
+  const auth = getAuth(app);
   if (loading) {
     return (
       <div className="flex justify-center min-h-screen">
@@ -47,33 +49,53 @@ const MyProfile = () => {
     const displayName = nameValue || user.displayName;
     const photoURL = photoInput || user.photoURL;
 
-    updateProfile(user, {
-      displayName,
-      photoURL,
-    })
-      .then(() => {
-        // const newUser = { displayName: displayName, photoURL: photoURL };
-        // setUser({ ...user, newUser });
-        setUser((prev) => ({
-          ...prev,
-          displayName,
-          photoURL,
-        }));
-        toast.success('Profile updated successfully 🎉', {
-          position: 'top-center',
-          autoClose: 2500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: 'colored',
-          className: 'bg-secendory text-white font-semibold rounded-xl shadow-lg',
-        });
-        form.reset();
+    setIsUpdating(true);
+    setStatusMessage('We’ll update your profile in a moment…');
+
+    setTimeout(() => {
+      updateProfile(auth.currentUser, {
+        displayName,
+        photoURL,
       })
-      .catch((error) => {
-        console.log(error.code);
-      });
+        .then(() => {
+          // const newUser = { displayName: displayName, photoURL: photoURL };
+          // setUser({ ...user, newUser });
+          setUser((prev) => ({
+            ...prev,
+            displayName,
+            photoURL,
+          }));
+          toast.success('Profile updated successfully 🎉', {
+            position: 'top-center',
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: 'colored',
+            className: 'bg-secendory text-white font-semibold rounded-xl shadow-lg',
+          });
+          form.reset();
+        })
+        .catch((error) => {
+          console.log(error);
+          toast.error('Update failed. Please try again.', {
+            position: 'top-center',
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: 'colored',
+            className: 'bg-red-5000 text-white font-semibold rounded-xl shadow-lg',
+          });
+          setStatusMessage('Error! Please try again.');
+        })
+        .finally(() => {
+          setIsUpdating(false);
+          setStatusMessage('Changes will update your Skillora profile info.');
+        });
+    }, 3000);
   };
 
   const handleLogout = () => {
@@ -85,6 +107,8 @@ const MyProfile = () => {
         console.log(error.code);
       });
   };
+
+  const handleClearForm = () => {};
 
   return (
     <>
@@ -233,23 +257,24 @@ const MyProfile = () => {
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <button
                   type="submit"
+                  disabled={isUpdateing}
                   className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-500 shadow-md hover:shadow-lg animate__animated animate__pulse animate__infinite cursor-pointer"
                   style={{ '--animate-duration': '2.5s' }}
                   onMouseEnter={(e) => e.currentTarget.classList.remove('animate__pulse')}
                   onMouseLeave={(e) => e.currentTarget.classList.add('animate__pulse')}
                 >
-                  Save Changes
+                  {isUpdateing ? 'Saving...' : 'Save Changes'}
                 </button>
 
                 <button
+                  onClick={handleClearForm}
                   type="button"
                   className="px-6 py-3 rounded-xl border border-slate-200 text-slate-600 hover:bg-red-400 hover:text-white duration-500 text-sm font-medium transition-all cursor-pointer"
                 >
                   Cancel
                 </button>
               </div>
-              <p className="text-xs md:text-sm text-slate-400">Changes will update your Skillora profile info.</p>
-              <p className="text-xs text-slate-400">We’ll update your profile in a moment…</p>
+              <p className="text-xs md:text-sm text-slate-400">{statusMessage}</p>
             </form>
 
             {/* Right: Preview */}
