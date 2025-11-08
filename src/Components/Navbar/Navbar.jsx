@@ -5,6 +5,7 @@ import imgLogo from '../../assets/logo.png';
 import { AuthContext } from '../../Provider/AuthProvider';
 import avatarImg from '../../assets/avatar.png';
 import Loading from '../Loading/Loading';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
   const links = (
@@ -27,7 +28,16 @@ const Navbar = () => {
   const handleLogout = () => {
     logout()
       .then(() => {
-        alert('logout successfully');
+        toast.success('Logged out successfully. See you soon!', {
+          position: 'top-center',
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: 'colored',
+          className: 'bg-secendory text-white font-semibold rounded-xl shadow-lg',
+        });
       })
       .catch((error) => {
         console.log(error.code);
@@ -51,15 +61,17 @@ const Navbar = () => {
                   {links}
                 </ul>
               </div>
-              <div className="flex items-center gap-2 md:gap-3">
+              <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-2 md:gap-3">
                 <figure className="w-4 md:w-8 lg:w-10 hidden md:inline ">
                   <img src={imgLogo} alt="Logo" />
                 </figure>
                 <div>
-                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold bg-linear-to-r from-[#7DD3FC] via-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent drop-shadow-sm">Skillora</h2>
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold bg-linear-to-r from-[#7DD3FC] via-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent drop-shadow-sm">
+                    Skillora
+                  </h2>
                   <p className="text-xs hidden md:inline text-accent">Share what you know, Learn what you love.</p>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
               <ul className="flex items-center gap-5 menu-horizontal px-1">{links}</ul>
@@ -67,7 +79,9 @@ const Navbar = () => {
 
             <div className="navbar-end flex gap-2 md:gap-5">
               {loading ? (
-                <Loading></Loading>
+                <div className="flex justify-center">
+                  <span className="loading loading-spinner bg-secondary"></span>
+                </div>
               ) : (
                 <div className="flex gap-2 md:gap-5">
                   {user ? (
@@ -79,6 +93,7 @@ const Navbar = () => {
                       Login
                     </Link>
                   )}
+
                   <Link to="/signup" className={`${user ? 'hidden' : 'btn btn-primary md:px-10'}`}>
                     Signup
                   </Link>

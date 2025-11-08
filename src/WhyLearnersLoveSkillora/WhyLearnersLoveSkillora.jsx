@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '../Components/Container/Container';
 import { FaUsers, FaRegClock, FaBullseye } from 'react-icons/fa';
 
-const WhyLearnersLoveSkillora = () => {
+const WhyLearnersLoveSkillora = ({ onScrollToSkills }) => {
   const features = [
     {
       id: 1,
@@ -44,22 +44,21 @@ const WhyLearnersLoveSkillora = () => {
             {/* Feature cards */}
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
               {features.map((feature) => (
-                <div
-                  key={feature.id}
-                  className="bg-white rounded-3xl px-6 py-7 shadow-md hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 text-center"
-                >
-                  <div className="flex items-center justify-center">
-                    <div
-                      className="w-16 h-16 rounded-full bg-sky-50 flex items-center justify-center animate__animated animate__infinite animate__pulse"
-                      style={{ '--animate-duration': '1.5s' }}
-                      onMouseEnter={(e) => e.currentTarget.classList.remove('animate__pulse')}
-                      onMouseLeave={(e) => e.currentTarget.classList.add('animate__pulse')}
-                    >
-                      {feature.icon}
+                <div key={feature.id} data-aos="fade-up-right">
+                  <div className="bg-white rounded-3xl px-6 py-7 shadow-md hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 text-center">
+                    <div className="flex items-center justify-center">
+                      <div
+                        className="w-16 h-16 rounded-full bg-sky-50 flex items-center justify-center animate__animated animate__infinite animate__pulse"
+                        style={{ '--animate-duration': '1.5s' }}
+                        onMouseEnter={(e) => e.currentTarget.classList.remove('animate__pulse')}
+                        onMouseLeave={(e) => e.currentTarget.classList.add('animate__pulse')}
+                      >
+                        {feature.icon}
+                      </div>
                     </div>
+                    <h3 className="mt-4 text-lg font-semibold text-slate-900">{feature.title}</h3>
+                    <p className="mt-2 text-sm text-slate-500 leading-relaxed">{feature.desc}</p>
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-slate-900">{feature.title}</h3>
-                  <p className="mt-2 text-sm text-slate-500 leading-relaxed">{feature.desc}</p>
                 </div>
               ))}
             </div>
@@ -67,7 +66,10 @@ const WhyLearnersLoveSkillora = () => {
             {/* Bottom tagline + CTA */}
             <div className="mt-8 text-center">
               <p className="text-xs md:text-sm text-slate-400">Built to make 1:1 learning simple, flexible and outcome-focused.</p>
-              <button className="mt-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 md:px-8 py-2.5 md:py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+              <button
+                onClick={onScrollToSkills}
+                className="mt-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 md:px-8 py-2.5 md:py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-500 cursor-pointer"
+              >
                 Get Started
               </button>
             </div>

@@ -41,7 +41,9 @@ const PopulerSkills = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill) => (
-              <PopulerSkillsCard key={skill.skillId} skill={skill}></PopulerSkillsCard>
+              <div key={skill.skillId} data-aos="zoom-out-up">
+                <PopulerSkillsCard skill={skill}></PopulerSkillsCard>
+              </div>
             ))}
           </div>
         </Container>

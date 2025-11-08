@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '../Components/Container/Container';
 import { FaSearch, FaRegIdBadge, FaCalendarCheck } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const HowSkilloraWorks = () => {
   const steps = [
@@ -44,23 +45,22 @@ const HowSkilloraWorks = () => {
           {/* Steps */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((step) => (
-              <div
-                key={step.id}
-                className="relative bg-white rounded-2xl shadow-[0_8px_25px_rgba(0,0,0,0.05)] p-8 text-center hover:-translate-y-2 transition-transform duration-500"
-              >
-                <span className="absolute -top-3 left-5 bg-sky-100 text-sky-700 font-semibold rounded-full px-3 py-1 text-sm shadow-sm">
-                  {step.id}
-                </span>
-                <div
-                  className="flex justify-center mb-4 animate__animated animate__infinite animate__swing"
-                  style={{ '--animate-duration': '2.5s' }}
-                  onMouseEnter={(e) => e.currentTarget.classList.remove('animate__swing')}
-                  onMouseLeave={(e) => e.currentTarget.classList.add('animate__swing')}
-                >
-                  {step.icon}
+              <div key={step.id} data-aos="fade-up-left">
+                <div className="relative bg-white rounded-2xl shadow-[0_8px_25px_rgba(0,0,0,0.05)] p-8 text-center hover:-translate-y-2 transition-transform duration-500">
+                  <span className="absolute -top-3 left-5 bg-sky-100 text-sky-700 font-semibold rounded-full px-3 py-1 text-sm shadow-sm">
+                    {step.id}
+                  </span>
+                  <div
+                    className="flex justify-center mb-4 animate__animated animate__infinite animate__swing"
+                    style={{ '--animate-duration': '2.5s' }}
+                    onMouseEnter={(e) => e.currentTarget.classList.remove('animate__swing')}
+                    onMouseLeave={(e) => e.currentTarget.classList.add('animate__swing')}
+                  >
+                    {step.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -68,9 +68,11 @@ const HowSkilloraWorks = () => {
           {/* Bottom text + CTA */}
           <div className="text-center mt-12">
             <p className="text-gray-500 text-sm">You can always update your profile and manage bookings from your dashboard.</p>
-            <button className="mt-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full shadow-sm transition-all duration-500 cursor-pointer">
-              Get Started
-            </button>
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <button className="mt-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full shadow-sm transition-all duration-500 cursor-pointer">
+                Get Started
+              </button>
+            </Link>
           </div>
         </Container>
       </section>

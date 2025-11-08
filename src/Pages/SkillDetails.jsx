@@ -7,6 +7,8 @@ import { FaStar } from 'react-icons/fa';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { CgMail } from 'react-icons/cg';
 import { toast } from 'react-toastify';
+import Lottie from 'lottie-react';
+import emptySkillAnimation from '../assets/empty.json';
 
 const SkillDetails = () => {
   const { skills, isloading } = use(SkillContext);
@@ -28,7 +30,13 @@ const SkillDetails = () => {
   console.log(skill);
 
   if (!skill) {
-    return <div>Sorry Skill not Found!</div>;
+    return (
+      <div className="flex flex-col items-center justify-center px-3 md:px-0 py-20">
+        <Lottie animationData={emptySkillAnimation} loop={true} className="w-64 h-64 mb-6" />
+        <h2 className="text-2xl font-semibold text-gray-700">Sorry! Skill not Found</h2>
+        <p className="text-gray-500 text-center md:text-left mt-2">The skill you’re looking for doesn’t exist or has been removed.</p>
+      </div>
+    );
   }
 
   const { skillName, category, rating, tagline, image, description, highlights, providerName, providerEmail, price, slotsAvailable } =
@@ -63,7 +71,10 @@ const SkillDetails = () => {
     <>
       {/* Hero */}
       <Container>
-        <section className="my-10 mx-3 lg:mx-0 py-10 px-3 md:px-10 lg:px-20 rounded-4xl bg-linear-to-br from-[#0ea5e9]/20 via-[#38bdf8]/10 to-[#fafafa] shadow-[0_8px_40px_rgba(14,165,233,0.15)] border border-white/60">
+        <section
+          data-aos="fade-up-right"
+          className="my-10 mx-3 lg:mx-0 py-10 px-3 md:px-10 lg:px-20 rounded-4xl bg-linear-to-br from-[#0ea5e9]/20 via-[#38bdf8]/10 to-[#fafafa] shadow-[0_8px_40px_rgba(14,165,233,0.15)] border border-white/60"
+        >
           <div className="flex items-center flex-col lg:flex-row justify-between">
             <div className="space-y-4 md:space-y-5">
               <h1 className="text-xl md:text-4xl lg:text-5xl font-bold text-center md:text-left">{skillName}</h1>
@@ -86,7 +97,10 @@ const SkillDetails = () => {
 
       {/* Main Info */}
       <Container>
-        <section className="my-10 py-5 md:py-6 lg:py-10 px-3 mx-3 lg:mx-0 md:px-10 lg:px-20 rounded-4xl bg-linear-to-b from-[#0ea5e9]/15 to-[#fafafa00] shadow-[0_4px_30px_rgba(14,165,233,0.08)]">
+        <section
+          data-aos="fade-up-left"
+          className="my-10 py-5 md:py-6 lg:py-10 px-3 mx-3 lg:mx-0 md:px-10 lg:px-20 rounded-4xl bg-linear-to-b from-[#0ea5e9]/15 to-[#fafafa00] shadow-[0_4px_30px_rgba(14,165,233,0.08)]"
+        >
           <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-4">Description</h2>
 
           <div className="flex flex-col lg:flex-row justify-between">
@@ -142,6 +156,7 @@ const SkillDetails = () => {
       {/* Book session form */}
       <Container>
         <section
+          data-aos="fade-up"
           id="booking-form"
           className="my-10 py-5 md:py-6 lg:py-10 px-3 mx-3 md:mx-auto md:px-10 lg:px-20 bg-linear-to-r from-sky-50 to-white rounded-3xl shadow-lg max-w-xl "
         >
@@ -187,6 +202,7 @@ const SkillDetails = () => {
         <div className="flex justify-center my-10">
           <Link
             to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             type="button"
             className="mt-4 bg-primary hover:bg-blue-500 text-white font-semibold py-3 px-10 rounded-xl transition-all duration-500 shadow-md hover:shadow-lg cursor-pointer"
           >

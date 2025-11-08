@@ -35,7 +35,9 @@ const TopMentors = () => {
           {/* Cards */}
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {mentors.map((mentor) => (
-              <TopMentorsCard key={mentor.id} mentor={mentor} />
+              <div key={mentor.id} data-aos="zoom-out-up">
+                <TopMentorsCard mentor={mentor} />
+              </div>
             ))}
           </div>
 

@@ -5,7 +5,7 @@ const PopulerSkillsCard = ({ skill }) => {
   const { skillId, image, skillName, rating, price } = skill;
 
   return (
-    <div className="bg-white rounded-3xl shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_8px_20px_rgba(0,164,255,0.15)]">
+    <div className="bg-white rounded-3xl shadow-md transition-all duration-700 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,164,255,0.15)]">
       <figure className="rounded-t-3xl overflow-hidden">
         <img className="w-full h-60 object-cover object-center transition-transform duration-500 hover:scale-105" src={image} alt="Shoes" />
       </figure>
