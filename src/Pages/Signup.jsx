@@ -136,7 +136,7 @@ const Signup = () => {
                   <h1 className="font-bold text-lg md:text-2xl lg:text-3xl md:mt-4">Learn. Teach. Grow Together.</h1>
                   <p className="mt-1.5 text-xs md:text-base">
                     Discover skills around you and share what you love. <br />
-                    Join the <strong className="text-primary md:text-lg">Skillora</strong> community today.
+                    Join the <strong className="bg-linear-to-r from-[#7DD3FC] via-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent drop-shadow-sm md:text-lg">Skillora</strong> community today.
                   </p>
                 </div>
               </div>
@@ -145,9 +145,13 @@ const Signup = () => {
               {/* Right Side Div */}
               <div className="flex-1 md:px-20 md:py-10 box-shadow-signup">
                 <div>
-                  <h1 className="mb-3 md:mb-6 text-center lg:text-left text-xl md:text-2xl lg:text-3xl font-semibold">
-                    Create Your <strong className="text-primary tracking-wider">Skillora</strong> Account
-                  </h1>
+                  <h2 className="mb-3 md:mb-6 text-center lg:text-left text-xl md:text-2xl lg:text-3xl font-semibold">
+                    Create Your{' '}
+                    <strong className="bg-linear-to-r from-[#7DD3FC] via-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent drop-shadow-sm">
+                      Skillora
+                    </strong>{' '}
+                    Account
+                  </h2>
                   <form onSubmit={handleSignup}>
                     <fieldset className="fieldset">
                       {/* Name */}
@@ -205,7 +209,7 @@ const Signup = () => {
                           </Link>
                         </p>
                       </div>
-                      <div className="mx-auto md:mx-0">
+                      <div>
                         <button className="btn btn-primary w-full font-bold mt-2 md:mt-4 box-shadow-signup-btn">Create Account</button>
                         <p className="text-lg text-center my-3 font-bold">or</p>
                       </div>

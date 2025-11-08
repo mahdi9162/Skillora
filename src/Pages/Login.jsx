@@ -128,7 +128,11 @@ const Login = () => {
                   <h1 className="font-bold text-lg md:text-3xl md:mt-4">Learn. Teach. Grow Together.</h1>
                   <p className="mt-1.5 text-xs md:text-base">
                     Discover skills around you and share what you love. <br />
-                    Join the <strong className="text-primary md:text-lg">Skillora</strong> community today.
+                    Join the{' '}
+                    <strong className="bg-linear-to-r from-[#7DD3FC] via-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent drop-shadow-sm md:text-lg">
+                      Skillora
+                    </strong>{' '}
+                    community today.
                   </p>
                 </div>
               </div>
@@ -183,7 +187,7 @@ const Login = () => {
                         </Link>
                       </div>
                       <div>
-                        <p className="text-sm text-slate-600 mt-3 text-center lg:text-left">
+                        <p className="text-sm text-slate-600 mt-3 text-left">
                           New to Skillora?{' '}
                           <Link to="/signup" className="text-primary font-semibold hover:underline">
                             Sign up
@@ -191,8 +195,8 @@ const Login = () => {
                         </p>
                       </div>
                       {/* Button */}
-                      <div className="mx-auto md:mx-0">
-                        <button className="btn btn-primary md:w-full md:text-lg font-bold mt-4">Login</button>
+                      <div>
+                        <button className="btn btn-primary w-full md:text-lg font-bold mt-4">Login</button>
                         <p className="text-lg text-center my-3 font-bold">or</p>
                       </div>
                     </fieldset>

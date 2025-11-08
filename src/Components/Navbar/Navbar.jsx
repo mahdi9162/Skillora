@@ -1,3 +1,4 @@
+'use client';
 import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import Container from '../Container/Container';
@@ -46,7 +47,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-[#ffffffcc] backdrop-blur-sm shadow-md border-b border-[#eaeaea]/60">
+      <nav className="bg-[#ffffffcc] backdrop-blur-sm shadow-md border-b border-[#eaeaea]/60 relative z-40">
         <Container>
           <div className="navbar py-4">
             <div className="navbar-start ">
@@ -57,7 +58,7 @@ const Navbar = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />{' '}
                   </svg>
                 </div>
-                <ul tabIndex="-1" className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow">
+                <ul tabIndex={0} className="menu menu-sm dropdown-content rounded-box z-50 mt-3 w-52 p-2 shadow bg-base-100">
                   {links}
                 </ul>
               </div>

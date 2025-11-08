@@ -22,7 +22,7 @@ const MyProfile = () => {
   const [statusMessage, setStatusMessage] = useState('Changes will update your Skillora profile info.');
   const updateYourProfile = useRef(null);
   const auth = getAuth(app);
-  
+
   if (loading) {
     return (
       <div className="flex justify-center min-h-screen">
@@ -228,27 +228,29 @@ const MyProfile = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {/* Left Info */}
               <div className="space-y-2 text-slate-700">
-                <p className="text-sm md:text-base">
-                  <span className="font-medium">Name:</span> <span className=" text-slate-600">{displayName}</span>
+                <p>
+                  <span className="font-semibold">Name:</span> <span className=" text-slate-600 text-sm md:text-base">{displayName}</span>
                 </p>
-                <p className="text-sm md:text-base">
-                  <span className="font-medium">Email:</span> <span className="text-slate-600">{email}</span>
+                <p>
+                  <span className="font-semibold">Email:</span> <span className="text-slate-600 text-sm md:text-base">{email}</span>
                 </p>
-                <p className="text-sm md:text-base">
-                  <span className="font-medium">User ID:</span> <span className="text-slate-600 break-all">{providerData[0]?.uid}</span>
+                <p>
+                  <span className="font-semibold">User ID:</span>{' '}
+                  <span className="text-slate-600 text-sm md:text-base break-all">{providerData[0]?.uid}</span>
                 </p>
-                <p className="text-sm md:text-base">
-                  <span className="font-medium">Member Since:</span> <span className="text-slate-600">{formattedTime}</span>
+                <p>
+                  <span className="font-semibold">Member Since:</span>{' '}
+                  <span className="text-slate-600 text-sm md:text-base">{formattedTime}</span>
                 </p>
               </div>
 
               {/* Right Info */}
               <div className="flex flex-col items-start md:items-end gap-2 md:gap-3">
-                <p className="text-slate-700 text-sm md:text-base">
+                <p className="text-slate-700 text-sm md:text-base flex gap-4">
                   Total Sessions Booked:{' '}
                   <span className="inline-block bg-sky-100 text-sky-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">0</span>
                 </p>
-                <p className="text-slate-700 text-sm md:text-base">
+                <p className="text-slate-700 text-sm md:text-base flex gap-4">
                   Account Status:{' '}
                   <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
                     Active
@@ -325,13 +327,13 @@ const MyProfile = () => {
 
               {/* Right: Preview */}
               {/* Right Div – Current Preview */}
-              <div className="flex items-center justify-center lg:justify-end mt-4 md:mt-10 lg:mt-0">
+              <div className="flex items-center justify-center mx-auto lg:mx-0 lg:justify-end mt-4 md:mt-10 lg:mt-0">
                 <div className="bg-white/70 rounded-3xl border border-white/80 shadow-[0_18px_45px_rgba(15,23,42,0.12)] px-8 py-8 lg:px-10 lg:py-9 max-w-sm">
                   <p className="text-xs font-semibold tracking-[0.25em] text-sky-500 uppercase text-center mb-6">Current Preview</p>
 
                   <div className="flex flex-col md:flex-row items-center gap-4">
                     <div className="avatar">
-                      <div className="w-40 md:w-20 h-20 rounded-2xl overflow-hidden shadow-md ring-2 ring-sky-100">
+                      <div className="w-40 md:w-20 rounded-2xl overflow-hidden shadow-md ring-2 ring-sky-100">
                         <img
                           src={photoURL || avatarImg}
                           alt="Current avatar"
@@ -362,7 +364,7 @@ const MyProfile = () => {
             <h2 className="text-xl md:text-2xl font-semibold text-slate-800 tracking-tight">Account Actions</h2>
 
             {/* Buttons */}
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col md:flex-row justify-center gap-4">
               <Link className="px-8 py-3 rounded-xl text-sm font-medium text-white bg-sky-500 hover:bg-sky-600 transition-all shadow-md hover:shadow-lg">
                 Change Password
               </Link>
