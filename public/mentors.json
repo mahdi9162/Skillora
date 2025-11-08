@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Alex Martin",
+    "role": "Music Instructor",
+    "rating": 4.8,
+    "totalReviews": 112,
+    "image": "https://i.ibb.co.com/Fk15FKWY/Alex-Martin.webp",
+    "category": "Music",
+    "tagline": "Helps beginners master guitar with easy step-by-step lessons."
+  },
+  {
+    "id": 2,
+    "name": "Sara Hossain",
+    "role": "Language Coach",
+    "rating": 4.6,
+    "totalReviews": 98,
+    "image": "https://i.ibb.co.com/Gv7zfhtD/Sara-Hossain.webp",
+    "category": "Language",
+    "tagline": "Guides learners to speak English fluently with real-life confidence."
+  },
+  {
+    "id": 3,
+    "name": "Nayeem Rahman",
+    "role": "Frontend Developer & Trainer",
+    "rating": 4.9,
+    "totalReviews": 143,
+    "image": "https://i.ibb.co.com/qYzfqP7Q/Nayeem-Rahman.webp",
+    "category": "Programming",
+    "tagline": "Teaches coding fundamentals through real projects and clean design."
+  },
+  {
+    "id": 4,
+    "name": "Maria Lopez",
+    "role": "Productivity Coach",
+    "rating": 4.7,
+    "totalReviews": 87,
+    "image": "https://i.ibb.co.com/4vsyqTX/Maria-Lopez.webp",
+    "category": "Self Development",
+    "tagline": "Helps busy professionals create focus, structure, and better routines."
+  },
+  {
+    "id": 5,
+    "name": "Riya Sharma",
+    "role": "E-commerce Expert",
+    "rating": 4.5,
+    "totalReviews": 64,
+    "image": "https://i.ibb.co.com/hxCcZ10c/Riya-Sharma.webp",
+    "category": "E-commerce",
+    "tagline": "Guides new sellers to launch and scale Shopify stores from scratch."
+  },
+  {
+    "id": 6,
+    "name": "Imran Ali",
+    "role": "Cooking Instructor",
+    "rating": 4.4,
+    "totalReviews": 72,
+    "image": "https://i.ibb.co.com/qFjCjCJg/Imran-Ali.webp",
+    "category": "Cooking",
+    "tagline": "Teaches simple, tasty, and budget-friendly meals for beginners."
+  },
+  {
+    "id": 7,
+    "name": "Hannah Kim",
+    "role": "UI/UX Designer",
+    "rating": 4.9,
+    "totalReviews": 129,
+    "image": "https://i.ibb.co.com/Tq8H3qKM/Hannah-Kim.webp",
+    "category": "Design",
+    "tagline": "Empowers learners to design clean, user-focused digital experiences."
+  },
+  {
+    "id": 8,
+    "name": "Rahul Desai",
+    "role": "Software Engineer & Python Mentor",
+    "rating": 4.7,
+    "totalReviews": 104,
+    "image": "https://i.ibb.co.com/93q4KBKb/Rahul-Desai.webp",
+    "category": "Programming",
+    "tagline": "Makes coding simple through structured Python problem-solving."
+  }
+]

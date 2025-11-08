@@ -10,14 +10,14 @@ const PopulerSkills = () => {
 
   if (isLoading) {
     return (
-      <div className="my-90">
+      <div className="my-96">
         <Loading></Loading>
       </div>
     );
   }
   return (
     <>
-      <section className=" relative my-5 md:my-10 lg:my-20 bg-linear-to-b from-white to-[#F6FAFB] overflow-hidden py-16 px-3 lg:px-0">
+      <section className=" relative my-5 md:my-10 lg:my-20 bg-[linear-gradient(to_bottom,#ffffff_0%,#f8fbff_100%)] overflow-hidden py-16 px-3 lg:px-0">
         {/* Background blobs only */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute top-20 right-[-60px] w-[420px] h-[420px] bg-sky-300/60 rounded-full blur-xl" />
@@ -30,6 +30,7 @@ const PopulerSkills = () => {
               Popular{' '}
               <span className="md:text-4xl bg-linear-to-r from-[#7DD3FC] via-[#0EA5E9] to-[#0369A1] bg-clip-text text-transparent drop-shadow-sm">
                 Skills
+                <span className="absolute -bottom-1 left-0 w-full h-1 rounded-full bg-linear-to-r from-sky-400/60 to-sky-600/60"></span>
               </span>{' '}
               Around You
             </h2>

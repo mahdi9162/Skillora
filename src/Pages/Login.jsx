@@ -137,7 +137,8 @@ const Login = () => {
                         </Link>
                       </p>
                     </div>
-                    <div className="mx-auto lg:mx-0">
+                    {/* Button */}
+                    <div className="mx-auto md:mx-0">
                       <button className="btn btn-primary md:w-full md:text-lg font-bold mt-4">Login</button>
                       <p className="text-lg text-center my-3 font-bold">or</p>
                     </div>
