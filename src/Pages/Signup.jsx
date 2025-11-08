@@ -6,10 +6,12 @@ import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
 import { updateProfile } from 'firebase/auth';
+import { IoEye } from 'react-icons/io5';
+import { IoEyeOff } from 'react-icons/io5';
 
 const Signup = () => {
   const [passValid, setPassValid] = useState('');
-
+  const [showPassword, setShowPassword] = useState(false);
   const { createSignup, setUser, GoogleLogin } = use(AuthContext);
   const navigate = useNavigate();
 
@@ -126,12 +128,25 @@ const Signup = () => {
                     />
                     {/* Password */}
                     <label className="label text-base-content">Password</label>
-                    <input
-                      type="password"
-                      name="password"
-                      className="input w-full placeholder:opacity-50 placeholder:text-xs md:placeholder:text-base mb-2"
-                      placeholder="Enter Your Password"
-                    />
+                    <div className='relative'>
+                      <input
+                        type="password"
+                        name="password"
+                        className="input w-full placeholder:opacity-50 placeholder:text-xs md:placeholder:text-base mb-2"
+                        placeholder="Enter Your Password"
+                      />
+                      {showPassword ? (
+                        <IoEye
+                          onClick={() => setShowPassword(!showPassword)}
+                          className="absolute top-5 right-4 -translate-y-1/2 text-lg cursor-pointer"
+                        />
+                      ) : (
+                        <IoEyeOff
+                          onClick={() => setShowPassword(!showPassword)}
+                          className="absolute top-5 right-4 -translate-y-1/2 text-lg cursor-pointer"
+                        />
+                      )}
+                    </div>
                     <p className="text-xs text-red-500 -mt-2">{passValid && passValid}</p>
                     <div>
                       <p className="text-xs md:text-sm">

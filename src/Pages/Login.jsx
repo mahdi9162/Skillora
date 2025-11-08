@@ -5,11 +5,14 @@ import Container from '../Components/Container/Container';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
+import { IoEye } from 'react-icons/io5';
+import { IoEyeOff } from 'react-icons/io5';
 
 const Login = () => {
   const { userLogin, GoogleLogin } = use(AuthContext);
   const [passValid, setPassValid] = useState('');
   const [email, setEmail] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   // Handle Email With Pass Login
@@ -101,12 +104,25 @@ const Login = () => {
                     />
                     {/* Password */}
                     <label className="label text-base-content">Password</label>
-                    <input
-                      type="password"
-                      name="password"
-                      className="input w-full placeholder:opacity-50 placeholder:text-xs md:placeholder:text-base mb-2"
-                      placeholder="Enter Your Password"
-                    />
+                    <div className="relative">
+                      <input
+                        type={showPassword ? 'text' : 'password'}
+                        name="password"
+                        className="input w-full placeholder:opacity-50 placeholder:text-xs md:placeholder:text-base mb-2"
+                        placeholder="Enter Your Password"
+                      />
+                      {showPassword ? (
+                        <IoEye
+                          onClick={() => setShowPassword(!showPassword)}
+                          className="absolute top-5 right-4 -translate-y-1/2 text-lg cursor-pointer"
+                        />
+                      ) : (
+                        <IoEyeOff
+                          onClick={() => setShowPassword(!showPassword)}
+                          className="absolute top-5 right-4 -translate-y-1/2 text-lg cursor-pointer"
+                        />
+                      )}
+                    </div>
                     <p className="text-xs text-red-500 -mt-2">{passValid && passValid}</p>
                     <div>
                       <Link to="/forgot-password" state={{ email: email }} className="link link-hover">
