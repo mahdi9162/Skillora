@@ -59,6 +59,18 @@ const Navbar = () => {
                   </svg>
                 </div>
                 <ul tabIndex={0} className="menu menu-sm dropdown-content rounded-box z-50 mt-3 w-52 p-2 shadow bg-base-100">
+                  {user && (
+                    <li>
+                      <Link to="/my-profile">
+                        <div className="avatar avatar-online">
+                          <div className="w-8 rounded-full">
+                            <img src={user.photoURL || avatarImg} />
+                          </div>
+                        </div>
+                        <span className="font-bold">{user.displayName}</span>
+                      </Link>
+                    </li>
+                  )}
                   {links}
                 </ul>
               </div>
